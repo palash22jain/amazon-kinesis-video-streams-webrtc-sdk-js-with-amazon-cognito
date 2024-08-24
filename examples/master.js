@@ -25,8 +25,8 @@ function getCredential(formValues, callback, err) {
         );
 
         var poolData = {
-            UserPoolId: '<User Pool ID>', // Your user pool id here
-            ClientId: '<App Client ID>', // Your client id here
+            UserPoolId: 'ap-south-1_Hj1I6tv1c', // Your user pool id here
+            ClientId: '4fmcsj52otvqcr4c1318daoj2j', // Your client id here
         };
         var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
 
@@ -47,10 +47,10 @@ function getCredential(formValues, callback, err) {
                 AWS.config.region = formValues.region;
 
                 AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-                    IdentityPoolId: '<Identity Pool ID>', // your identity pool id here
+                    IdentityPoolId: 'ap-south-1:3874963e-ffdf-4b6a-a031-c8237adab832', // your identity pool id here
                     Logins: {
                         // Change the key below according to the specific region your user pool is in.
-                        'cognito-idp.<region>.amazonaws.com/<User Pool ID>': result
+                        'cognito-idp.ap-south-1.amazonaws.com/ap-south-1_Hj1I6tv1c': result
                             .getIdToken()
                             .getJwtToken(),
                     },
